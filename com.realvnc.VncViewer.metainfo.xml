@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 the Chromium authors, with modifications -->
+<component type="desktop">
+  <id>com.realvnc.VncViewer</id>
+  <launchable type="desktop-id">com.realvnc.VncViewer.desktop</launchable>
+  <name>RealVNC Viewer</name>
+  <developer_name>RealVNC</developer_name>
+  <summary>The world's safest remote access software</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <url type="homepage">https://www.realvnc.com/en/connect/download/viewer/linux/</url>
+  <description>
+   <p>NOTE: This wrapper is not verified by, affiliated with, or supported by RealVNC.</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://www.realvnc.com/wp-content/uploads/2023/11/realvnc-viewer-server2x-min.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="7.11.0" date="2024-05-08"/>
+  </releases>
+  <content_rating type="oars-1.1">
+  </content_rating>
+  <update_contact>F-i-f on GitHub</update_contact>
+</component>

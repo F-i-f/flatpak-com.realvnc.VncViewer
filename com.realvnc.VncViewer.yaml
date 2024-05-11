@@ -1,0 +1,58 @@
+app-id: com.realvnc.VncViewer
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: vncviewer
+separate-locales: false
+build-options:
+  no-debuginfo: true
+tags:
+  - proprietary
+finish-args:
+  - --env=GTK_PATH=/app/lib/gtkmodules
+  - --share=ipc
+  - --share=network
+  - --socket=x11
+  - --socket=wayland
+  - --persist=.vnc
+modules:
+  - name: realvncviewer
+    buildsystem: simple
+    build-commands:
+      - ar x vnc-viewer.deb data.tar.xz
+      - rm vnc-viewer.deb
+      - tar -xf data.tar.xz --strip-components=2 -C /app
+      - rm data.tar.xz
+      - mv /app/share/applications/realvnc-vncviewer.desktop /app/share/applications/com.realvnc.VncViewer.desktop
+      - sed -i -e 's!^Icon=.*!Icon=com.realvnc.VncViewer!' /app/share/applications/com.realvnc.VncViewer.desktop
+      - mv /app/share/mime/packages/realvnc-vncviewer.xml    /app/share/mime/packages/com.realvnc.VncViewer.xml
+      - mv /app/share/icons/hicolor/48x48/apps/vncviewer48x48.png /app/share/icons/hicolor/48x48/apps/com.realvnc.VncViewer.png
+      - mv /app/share/mimelnk/application/realvnc-vncviewer-mime.desktop /app/share/mimelnk/application/com.realvnc.VncViewer-mime.desktop
+      - sed -i -re 's!^(Icon|DefaultApp)=.*!\1=com.realvnc.VncViewer!' /app/share/mimelnk/application/com.realvnc.VncViewer-mime.desktop
+      - install -Dm 644 -t /app/share/metainfo com.realvnc.VncViewer.metainfo.xml
+      - |
+        for icon in 16 24 32 64 128 256 512; do
+          install -Dm 644 com.realvnc.VncViewer-$icon.png /app/share/icons/hicolor/${icon}x${icon}/apps/com.realvnc.VncViewer.png
+        done
+    sources:
+      - type: file
+        url: https://downloads.realvnc.com/download/file/viewer.files/VNC-Viewer-7.11.0-Linux-x64.deb
+        sha256: 3af724cfab0f3773cbee820d46459971dd73460b594c46ac703170007d96abe5
+        dest-filename: vnc-viewer.deb
+        only-arches: [x86_64]
+      - type: file
+        path: com.realvnc.VncViewer.metainfo.xml
+      - type: file
+        path: com.realvnc.VncViewer-16.png
+      - type: file
+        path: com.realvnc.VncViewer-24.png
+      - type: file
+        path: com.realvnc.VncViewer-32.png
+      - type: file
+        path: com.realvnc.VncViewer-64.png
+      - type: file
+        path: com.realvnc.VncViewer-128.png
+      - type: file
+        path: com.realvnc.VncViewer-256.png
+      - type: file
+        path: com.realvnc.VncViewer-512.png
