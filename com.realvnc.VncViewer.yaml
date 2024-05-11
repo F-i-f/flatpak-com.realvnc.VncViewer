@@ -24,7 +24,7 @@ modules:
       - tar -xf data.tar.xz --strip-components=2 -C /app
       - rm data.tar.xz
       - mv /app/share/applications/realvnc-vncviewer.desktop /app/share/applications/com.realvnc.VncViewer.desktop
-      - sed -i -e 's!^Icon=.*!Icon=com.realvnc.VncViewer!' /app/share/applications/com.realvnc.VncViewer.desktop
+      - sed -i -re 's!^Icon=.*!Icon=com.realvnc.VncViewer!' -e '/Encoding=/d' -e 's!(Categories=(.*;)?)Application(;(.*))?$!\1\4!' -e 's!NewConnection!X-&!' /app/share/applications/com.realvnc.VncViewer.desktop
       - mv /app/share/mime/packages/realvnc-vncviewer.xml    /app/share/mime/packages/com.realvnc.VncViewer.xml
       - mv /app/share/icons/hicolor/48x48/apps/vncviewer48x48.png /app/share/icons/hicolor/48x48/apps/com.realvnc.VncViewer.png
       - mv /app/share/mimelnk/application/realvnc-vncviewer-mime.desktop /app/share/mimelnk/application/com.realvnc.VncViewer-mime.desktop
