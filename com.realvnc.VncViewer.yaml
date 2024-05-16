@@ -31,7 +31,7 @@ modules:
       - sed -i -re 's!^(Icon|DefaultApp)=.*!\1=com.realvnc.VncViewer!' /app/share/mimelnk/application/com.realvnc.VncViewer-mime.desktop
       - install -Dm 644 -t /app/share/metainfo com.realvnc.VncViewer.metainfo.xml
       - |
-        for icon in 16 24 32 64 128 256 512; do
+        for icon in 64 128 256 512; do
           install -Dm 644 com.realvnc.VncViewer-$icon.png /app/share/icons/hicolor/${icon}x${icon}/apps/com.realvnc.VncViewer.png
         done
     sources:
@@ -42,12 +42,6 @@ modules:
         only-arches: [x86_64]
       - type: file
         path: com.realvnc.VncViewer.metainfo.xml
-      - type: file
-        path: com.realvnc.VncViewer-16.png
-      - type: file
-        path: com.realvnc.VncViewer-24.png
-      - type: file
-        path: com.realvnc.VncViewer-32.png
       - type: file
         path: com.realvnc.VncViewer-64.png
       - type: file
