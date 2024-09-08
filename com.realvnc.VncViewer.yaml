@@ -36,8 +36,8 @@ modules:
         done
     sources:
       - type: file
-        url: https://downloads.realvnc.com/download/file/viewer.files/VNC-Viewer-7.11.1-Linux-x64.deb
-        sha256: d3f13cddc3f82dc902633668f3c646f5f5725e90539a9a920d6a4411f2539632
+        url: https://downloads.realvnc.com/download/file/viewer.files/VNC-Viewer-7.12.1-Linux-x64.deb
+        sha256: 588a9adccab720ab2591e1b642506d02fc7f14a3da4cb8202f34d8f22ad13729
         dest-filename: vnc-viewer.deb
         only-arches: [x86_64]
       - type: file
