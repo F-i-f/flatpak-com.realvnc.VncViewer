@@ -12,7 +12,7 @@ finish-args:
   - --env=GTK_PATH=/app/lib/gtkmodules
   - --share=ipc
   - --share=network
-  - --socket=x11
+  - --socket=fallback-x11
   - --socket=wayland
   - --persist=.vnc
 modules:
