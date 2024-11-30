@@ -4,7 +4,9 @@
   <id>com.realvnc.VncViewer</id>
   <launchable type="desktop-id">com.realvnc.VncViewer.desktop</launchable>
   <name>RealVNC Viewer</name>
-  <developer_name>RealVNC</developer_name>
+  <developer id="com.realvnc">
+    <name>RealVNC</name>
+  </developer>
   <summary>The world's safest remote access software</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
@@ -25,5 +27,5 @@
   </releases>
   <content_rating type="oars-1.1">
   </content_rating>
-  <update_contact>F-i-f on GitHub</update_contact>
+  <update_contact>F-i-f on GitHub.</update_contact>
 </component>
