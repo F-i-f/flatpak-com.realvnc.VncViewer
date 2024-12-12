@@ -17,6 +17,7 @@
   <screenshots>
     <screenshot type="default">
       <image>https://www.realvnc.com/wp-content/uploads/2023/11/realvnc-viewer-server2x-min.png</image>
+      <caption>Two screens showing the VNC Viewer UI.</caption>
     </screenshot>
   </screenshots>
   <releases>
