@@ -12,8 +12,7 @@ finish-args:
   - --env=GTK_PATH=/app/lib/gtkmodules
   - --share=ipc
   - --share=network
-  - --socket=fallback-x11
-  - --socket=wayland
+  - --socket=x11
   - --persist=.vnc
 modules:
   - name: realvncviewer
