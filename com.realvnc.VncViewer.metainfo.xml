@@ -12,7 +12,8 @@
   <project_license>LicenseRef-proprietary</project_license>
   <url type="homepage">https://www.realvnc.com/en/connect/download/viewer/linux/</url>
   <description>
-   <p>NOTE: This wrapper is not verified by, affiliated with, or supported by RealVNC.</p>
+   <p>**This is a community package of RealVNC Viewer and not
+   officially supported by RealVNC.**</p>
   </description>
   <screenshots>
     <screenshot type="default">
